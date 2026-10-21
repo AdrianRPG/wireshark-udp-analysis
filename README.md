@@ -76,3 +76,31 @@ Wireshark confirms this in Packet 15 with:
 `Protocol: UDP (17)`
 
 ![UDP protocol number in IPv4](screenshots/02-udp-ip-protocol.png)
+
+## DNS Request/Reply Port Analysis
+
+The UDP request/reply pair analyzed in the trace consists of:
+
+### Request — Packet 15
+
+- **Source IP:** `10.0.0.44`
+- **Destination IP:** `75.75.75.75`
+- **Source Port:** `58350`
+- **Destination Port:** `53`
+
+### Reply — Packet 17
+
+- **Source IP:** `75.75.75.75`
+- **Destination IP:** `10.0.0.44`
+- **Source Port:** `53`
+- **Destination Port:** `58350`
+
+The source and destination port numbers are reversed in the reply:
+
+`Request: 58350 → 53`
+
+`Reply: 53 → 58350`
+
+This shows that the reply is sent from the server's port back to the temporary source port used by the requesting host.
+
+![UDP reply header](screenshots/04-udp-reply-header.png)
