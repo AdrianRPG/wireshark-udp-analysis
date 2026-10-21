@@ -13,3 +13,10 @@ This lab analyzes UDP traffic using Wireshark and the provided packet trace. The
 - Determine the maximum UDP port value and approximate segment size.
 - Identify UDP's protocol number in the IPv4 header.
 - Analyze the relationship between source and destination ports in a UDP request/reply pair.
+
+## Tools and Trace
+
+- **Wireshark** was used to inspect and analyze packet contents.
+- **Trace file:** `dns-wireshark-trace1-1`
+- The trace contains DNS query and response messages carried over UDP.
+- Packet **15** was selected as the first UDP segment analyzed in detail.
