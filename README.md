@@ -104,3 +104,19 @@ The source and destination port numbers are reversed in the reply:
 This shows that the reply is sent from the server's port back to the temporary source port used by the requesting host.
 
 ![UDP reply header](screenshots/04-udp-reply-header.png)
+
+## Key Findings
+
+- UDP uses a compact **8-byte header** containing four fields: Source Port, Destination Port, Length, and Checksum.
+- Each UDP header field is **2 bytes (16 bits)** long.
+- The UDP Length field includes both the UDP header and the payload.
+- UDP is identified by protocol number **17** in the IPv4 header.
+- Source and destination ports are also 16-bit values, allowing port numbers up to **65,535**.
+- The analyzed DNS exchange used Packet **15** as the request and Packet **17** as the reply.
+- The request used port `58350 → 53`, while the reply reversed the ports to `53 → 58350`.
+
+## Conclusion
+
+This lab provided hands-on practice analyzing UDP traffic in Wireshark. By examining a DNS request and response, I was able to identify the UDP header fields, determine their sizes, interpret the Length field, verify UDP's IPv4 protocol number, and observe how source and destination ports are reversed between a request and its reply.
+
+The analysis reinforced how UDP provides a simple transport-layer structure while relying on application-layer protocols such as DNS to carry meaningful data.
