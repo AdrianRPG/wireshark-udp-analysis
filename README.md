@@ -36,3 +36,25 @@ The packet uses the following addressing information:
 The destination port `53` corresponds to DNS traffic, which is consistent with the DNS query shown in Wireshark.
 
 ![First UDP segment](screenshots/01-first-udp-segment.png)
+
+## UDP Header Structure
+
+The UDP header contains **four fields**:
+
+1. **Source Port**
+2. **Destination Port**
+3. **Length**
+4. **Checksum**
+
+Each field is **2 bytes (16 bits)** long, making the total UDP header size **8 bytes**.
+
+For Packet 15, Wireshark shows:
+
+- **Source Port:** `58350`
+- **Destination Port:** `53`
+- **Length:** `43 bytes`
+- **Checksum:** present in the UDP header
+
+The UDP **Length** field represents the total size of the UDP datagram, including both the **8-byte UDP header** and the UDP payload.
+
+![UDP request header](screenshots/03-udp-request-header.png)
