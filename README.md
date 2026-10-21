@@ -58,3 +58,21 @@ For Packet 15, Wireshark shows:
 The UDP **Length** field represents the total size of the UDP datagram, including both the **8-byte UDP header** and the UDP payload.
 
 ![UDP request header](screenshots/03-udp-request-header.png)
+
+## UDP Limits and Protocol Number
+
+Because the UDP **Length** field is 16 bits wide, the total UDP datagram size can be approximately `2^16` bytes.
+
+The UDP source and destination port fields are also 16 bits wide, so the largest possible port number is:
+
+`2^16 - 1 = 65,535`
+
+The IPv4 header identifies UDP using protocol number:
+
+`17`
+
+Wireshark confirms this in Packet 15 with:
+
+`Protocol: UDP (17)`
+
+![UDP protocol number in IPv4](screenshots/02-udp-ip-protocol.png)
