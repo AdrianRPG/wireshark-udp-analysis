@@ -20,3 +20,19 @@ This lab analyzes UDP traffic using Wireshark and the provided packet trace. The
 - **Trace file:** `dns-wireshark-trace1-1`
 - The trace contains DNS query and response messages carried over UDP.
 - Packet **15** was selected as the first UDP segment analyzed in detail.
+
+## UDP Packet Identification
+
+The first UDP segment selected for analysis is **Packet 15**. Wireshark identifies the application-layer payload as a **DNS query** for `gaia.cs.umass.edu`.
+
+The packet uses the following addressing information:
+
+- **Source IP:** `10.0.0.44`
+- **Destination IP:** `75.75.75.75`
+- **UDP Source Port:** `58350`
+- **UDP Destination Port:** `53`
+- **Application-Layer Protocol:** DNS
+
+The destination port `53` corresponds to DNS traffic, which is consistent with the DNS query shown in Wireshark.
+
+![First UDP segment](screenshots/01-first-udp-segment.png)
